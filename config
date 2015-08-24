@@ -8,8 +8,12 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
 focus_follows_mouse no
+hide_edge_borders both
+workspace_auto_back_and_forth yes
 set $mod Mod4
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -99,6 +103,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
+# change border styleorkspace_auto_back_and_forth yes
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -186,10 +194,23 @@ mode "$mode_system" {
 bindsym $mod+Shift+d mode "$mode_system"
 
 
+# Colors
+set $blue #5294E2
+set $gray #222222
+
+client.focused            $blue     $blue   #gray   #333333
+client.focused_inactive   #333333   $gray   $blue   #000000
+client.unfocused          #333333   $gray   $blue   #000000
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        output eDP1
+    status_command i3status
+    output eDP1
+    colors {
+        background              $gray
+        focused_workspace	$blue	$blue	$gray
+        inactive_workspace	$gray   $gray   $blue
+    }
 }
-
