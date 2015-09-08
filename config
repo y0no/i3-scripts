@@ -30,7 +30,6 @@ font pango:DejaVu Sans Mono 8
 # Startup
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-fill /mnt/data/Images/x675.jpe
-#exec --no-startup-id nm-applet
 exec --no-startup-id wicd-gtk
 exec --no-startup-id volumeicon
 exec --no-startup-id keepassx
@@ -38,15 +37,16 @@ exec --no-startup-id keepassx
 exec --no-startup-id owncloud
 exec --no-startup-id octopi-notifier
 exec --no-startup-id start_conky_grey
-exec clipit
 
 # Us Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+for_window [class="Galculator"] floating enable border pixel 2
+
 # Shortcuts
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec i3-sensible-terminal
 bindsym Control+Mod1+w exec firefox
-bindsym Control+Mod1+f exec spacefm
+bindsym Control+Mod1+f exec pcmanfm
 
 # multimedia keys
 bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '5%+'"
@@ -72,23 +72,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# alternatively, change focus
-#bindsym $mod+h focus left
-#bindsym $mod+j focus down
-#bindsym $mod+k focus up
-#bindsym $mod+l focus right
-
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-bindsym $mod+Shift+Left move left
 
 # split in horizontal orientation
 bindsym $mod+h split h
