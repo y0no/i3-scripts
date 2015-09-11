@@ -42,6 +42,8 @@ exec --no-startup-id start_conky_grey
 floating_modifier $mod
 
 for_window [class="Galculator"] floating enable border pixel 2
+for_window [class="pydio-sync"] floating enable border pixel 1
+for_window [title="^Oracle VM VirtualBox"] floating enable border normal
 
 # Shortcuts
 bindsym $mod+Return exec i3-sensible-terminal
@@ -197,6 +199,7 @@ client.unfocused          #333333   $gray   $blue   #000000
 bar {
     status_command i3status
     output eDP1
+    font pango:DejaVu Sans Mono, FontAwesome 8
     colors {
         background              $gray
         focused_workspace	$blue	$blue	$gray
