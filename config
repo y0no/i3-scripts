@@ -37,6 +37,7 @@ exec --no-startup-id keepassx
 exec --no-startup-id owncloud
 exec --no-startup-id octopi-notifier
 exec --no-startup-id start_conky_grey
+exec --no-startup-id redshift-gtk
 
 # Us Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
